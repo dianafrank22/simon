@@ -1,7 +1,122 @@
-.quarter-circle {
-    background-color:#c06;
-    height:150px;
-    width: 150px;
-    -moz-border-radius: 150px 0 0 0;
-    border-radius: 150px 0 0 0;
+body{
+	background: rgb(10, 24, 39);
 }
+
+h1{
+	color: white;
+	font-family: georgia;
+	letter-spacing: 10px;
+	text-align: center;
+	font-size: 3em;
+}
+
+.game {
+	text-align: center;
+}
+
+.start {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: black;
+	width: 150px;
+	height: 150px;
+	border-radius: 150px;
+	text-align: center;
+	margin-top: -50px; 
+	margin-left:-50px;
+}
+
+
+button{
+	color: white;
+	background-color: rgba(47, 22, 24, 0);
+	border-style: none;
+	width:100px;
+	height:100px;
+	text-align: center;
+	border-radius: 150px;
+	font-size: 1.5em;
+	font-style: bold;
+	margin-top: -50px; 
+	margin-left:-50px;
+	top: 50%;
+	left: 50%;
+}
+
+.green {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: rgb(50,141,13);
+    height:190px;
+    width: 190px;
+    border-top-left-radius: 150px;
+    border-radius: 150px 0 0 0;
+    margin-top:-200px; 
+    margin-left:-190px;
+    text-align: center;
+    border: thick black solid;
+    /*border-bottom-right-radius: ;*/
+}
+/*have to move it so that it is with the start button*/
+
+.lightgreen {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    height:190px;
+    width: 190px;
+    border-top-left-radius: 150px;
+    border-radius: 150px 0 0 0;
+    margin-top:-200px; 
+    margin-left:-190px;
+    text-align: center;
+    border: thick black solid;
+    box-shadow: 0 0 0 50px rgb(75,219,2);
+}
+
+.red {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: rgb(246,19,37);
+    height:190px;
+    width: 190px;
+    border-top-right-radius: 150px;
+    margin-top:-200px; 
+    margin-right:-180px;
+    border: thick black solid;
+    
+}
+
+.yellow {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: rgb(251,241,19);
+    height:190px;
+    width: 190px;
+    border-bottom-left-radius: 150px;
+    margin-bottom:-180px; 
+    margin-left:-190px;
+    border: thick black solid;
+}
+
+.blue {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: rgb(16,127,195);
+    height:190px;
+    width: 190px;
+    border-bottom-right-radius: 150px;
+    margin-bottom:-170px; 
+    margin-right:-200px;
+    border: thick black solid;
+    
+}
+/*have to move it so that it is with the start button*/
+/*red overlapping green?*/
+/*things are not centered*/
+
