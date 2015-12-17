@@ -17,3 +17,23 @@ how to make quarter circle
 		secondStart += degreesPerSecond
 		secondHand.css('transform', 'rotate('+secondStart+'deg)');
 		},1000);
+
+notes: 
+
+// each time player gets it right, add to it it 
+
+// toggle choose random to glow 
+
+// $(".green").on("click", function() {
+//     $(this).toggleClass("lightGreen");
+// }) 
+
+// click function on button to start random selection of buttons to light up
+
+// animate to toggle class? 
+
+
+// var sequence = "";
+// // empty sequence to start
+// // after every round, if they match the sequence with clicks, then add onto last sequence
+// sequence += color

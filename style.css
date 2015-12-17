@@ -14,7 +14,7 @@ h1{
 	text-align: center;
 }
 
-.start {
+.start_btn {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -61,7 +61,7 @@ button{
 }
 /*have to move it so that it is with the start button*/
 
-.lightgreen {
+/*.lightgreen {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -73,8 +73,8 @@ button{
     margin-left:-190px;
     text-align: center;
     border: thick black solid;
-    box-shadow: 0 0 0 50px rgb(75,219,2);
-}
+    box-shadow: 0 0 0px 60px rgb(75,219,2);
+}*/
 
 .red {
 	position: absolute;
@@ -116,7 +116,6 @@ button{
     border: thick black solid;
     
 }
-/*have to move it so that it is with the start button*/
-/*red overlapping green?*/
+
 /*things are not centered*/
 
