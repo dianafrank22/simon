@@ -23,8 +23,8 @@ h1{
 	height: 150px;
 	border-radius: 150px;
 	text-align: center;
-	margin-top: -50px; 
-	margin-left:-50px;
+	margin-top: -75px; 
+	margin-left:-75px;
 }
 
 
@@ -38,8 +38,8 @@ button{
 	border-radius: 150px;
 	font-size: 1.5em;
 	font-style: bold;
-	margin-top: -50px; 
-	margin-left:-50px;
+	margin-top: 10px; 
+	margin-left:10px;
 	top: 50%;
 	left: 50%;
 }
@@ -61,10 +61,11 @@ button{
 }
 /*have to move it so that it is with the start button*/
 
-/*.lightgreen {
+.glowGreen {
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	background-color: rgb(90,244,55);
     height:190px;
     width: 190px;
     border-top-left-radius: 150px;
@@ -73,10 +74,25 @@ button{
     margin-left:-190px;
     text-align: center;
     border: thick black solid;
-    box-shadow: 0 0 0px 60px rgb(75,219,2);
-}*/
+    box-shadow: 0 0 40px rgba(75,219,2, .8);
+
+}
 
 .red {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: rgb(186,36,36);
+    height:190px;
+    width: 190px;
+    border-top-right-radius: 150px;
+    margin-top:-200px; 
+    margin-right:-180px;
+    border: thick black solid;
+    
+}
+
+.glowRed{
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -87,10 +103,24 @@ button{
     margin-top:-200px; 
     margin-right:-180px;
     border: thick black solid;
-    
+    box-shadow: 0 0 40px rgba(246,19,37, .8);
+
 }
 
 .yellow {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: rgb(207,219,20);
+    height:190px;
+    width: 190px;
+    border-bottom-left-radius: 150px;
+    margin-bottom:-180px; 
+    margin-left:-190px;
+    border: thick black solid;
+}
+
+.glowYellow{
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -101,7 +131,10 @@ button{
     margin-bottom:-180px; 
     margin-left:-190px;
     border: thick black solid;
+    box-shadow: 0 0 40px rgba(251,241,19, .8);
 }
+
+
 
 .blue {
 	position: absolute;
@@ -115,6 +148,20 @@ button{
     margin-right:-200px;
     border: thick black solid;
     
+}
+
+.glowBlue {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: rgb(17,165,255);
+    height:190px;
+    width: 190px;
+    border-bottom-right-radius: 150px;
+    margin-bottom:-170px; 
+    margin-right:-200px;
+    border: thick black solid;
+    box-shadow: 0 0 40px rgba(17,165,255, .8);
 }
 
 /*things are not centered*/

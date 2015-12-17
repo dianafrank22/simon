@@ -37,3 +37,26 @@ notes:
 // // empty sequence to start
 // // after every round, if they match the sequence with clicks, then add onto last sequence
 // sequence += color
+
+
+/*.lightgreen {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    height:190px;
+    width: 190px;
+    border-top-left-radius: 150px;
+    border-radius: 150px 0 0 0;
+    margin-top:-200px; 
+    margin-left:-190px;
+    text-align: center;
+    border: thick black solid;
+    box-shadow: 0 0 0px 60px rgb(75,219,2);
+}*/
+
+
+var green = $('.green');
+var red= $('.red');
+var blue = $('.blue');
+var yellow =$('.yellow');
+var start = $('.start_btn');
