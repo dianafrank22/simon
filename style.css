@@ -10,6 +10,19 @@ h1{
 	font-size: 3em;
 }
 
+.highScores {
+	color: white;
+	font-family: georgia;
+	text-align: center;
+	float: right;
+	margin-right: 70px;
+	font-size: .5em;
+	letter-spacing: 3px;
+	margin-top: 20px;
+}
+
+
+
 .game {
 	text-align: center;
 }

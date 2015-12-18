@@ -1,12 +1,14 @@
 "use strict";
 $('document').ready(function() {
-
+	var clickNumber = 0
 	var green = $('.green');
 	var red = $('.red');
 	var blue = $('.blue');
 	var yellow = $('.yellow');
+	var box = $('box');
 	var colors = [goGreen, goRed, goBlue, goYellow];
 	var sequence = [];
+	var sequenceActive = false;
 
 	var reset = function(){
 		green.removeClass("glowGreen");
@@ -16,101 +18,125 @@ $('document').ready(function() {
 	}
 
 
-
-// light up the colors
+	// light up the colors
 	var goGreen = function(){
-		reset()
 		green.toggleClass("glowGreen");
-		};
+		console.log('flashing green')
+		setTimeout(function(){
+			reset()
+		},1000)
+	};
 
 	var goRed = function(){
-		reset()
 		red.toggleClass("glowRed");
-		};
+		console.log('flashing red')
+		setTimeout(function(){
+			reset()
+		},1000)
+	};
 
 	var goBlue = function(){
-		reset()
 		blue.toggleClass("glowBlue");
-		};
+		console.log('flashing blue')
+		setTimeout(function(){
+			reset()
+		},1000)
+	};
 
 	var goYellow = function(){
-		reset()
 		yellow.toggleClass("glowYellow");
-		};
+		console.log('flashing yellow')
+		setTimeout(function(){
+			reset()
+		},1000)
+	};
 
-var time = setTimeout(function(){
-	goGreen();
-	goRed();
-	goBlue();
-	goYellow();
+	$(".green").click(function(){
+		$(this).toggleClass("glowGreen");
+	})
 
-}, 2000)
+	$(".red")
 
-
-// choose a color randomly
+	// choose a color randomly
 	var rand = function() {
 			var number = (Math.floor(Math.random() * colors.length));
 			sequence.push(number);
-			
+			//console.log('pushing '+number)
 	};
 
+	// display the color chosen by var rand
+	var showSequence = function(){
+	//$('.box').remove('click');
+	sequenceActive = true;
+	 for (var i = 0; i < sequence.length; i++)  {
+	 		var f;
+	 		switch(sequence[i]){
+				case 0: 
+					f=goGreen; 
+					break;
+		
+				case 1:
+					f=goRed;
+					break;
 
-// display the color chosen by var rand
-var showSequence = function(){
- for (var i = 0; i < sequence.length; i++)  {
- 		var f;
- 		switch(sequence[i]){
-			case 0: 
-				f=goGreen; 
-				break;
-	
-			case 1:
-				f=goRed;
-				break;
-
-			case 2:
-				f=goBlue;
-				break;
-	
-			case 3:
-				f=goYellow;
-				break;
+				case 2:
+					f=goBlue;
+					break;
+		
+				case 3:
+					f=goYellow;
+					break;
+			}
+			setTimeout(f, i * 2000)
 		}
-		setTimeout(f, i * 1500)
-	}
-};
-
-
-
-
-// make start button begin the game (i.e. choosing )
-var beginGame = function(){
-		$(".start_btn").click(function(){
-			rand();
-			showSequence();
-		})
+		clickNumber = 0;
+		setTimeout(function(){
+			sequenceActive = false;
+		}, sequence.length * 1000)
+		
+		//listenForClick();
 	};
 
-beginGame();
+	// make start button begin the game (i.e. choosing )
+	// var beginGame = function(){
+	$("#start").click(function(){
+		console.log('clicked start')
+		rand();
+		showSequence();
+	})
+
 
 
 
 // checking to see if user clicks matches color chosen by computer
 // clicksOnTurn increases each time you click, sequence goes through index up to
 // that number
-	var clicksOnTurn = 0;
-	var userClick = $('.box').click(function(e){
-		if (e.target.id == sequence[clicksOnTurn]){
-			clicksOnTurn ++
-			rand();
-			showSequence();
-	} else {
-			// console.log("lose!")
-			$(".button").text("You lost :(! Click to Play Again");
-			var clicksOnTurn = 0;
-			var sequence = [];
+// change text to number of sequence array
+
+$('.box').on('click', function(e){
+	if (sequenceActive){
+		return;
 	}
+	var actual = sequence[clickNumber]
+	var guess = this.id
+	verifyClick(guess, actual);
 });
+
+var verifyClick = function(guess, actual){
+	if (guess == actual){
+			console.log('right')
+			clickNumber++
+			if (clickNumber < sequence.length){
+			}else{
+				alert("You got it correct! On to the next round!")
+				rand()
+				showSequence()
+			}
+	}else{
+			console.log('wrong')
+	}
+}
+
 
 
 
@@ -120,3 +146,5 @@ beginGame();
 
 
 }); 
+
+
