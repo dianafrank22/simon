@@ -60,3 +60,6 @@ var red= $('.red');
 var blue = $('.blue');
 var yellow =$('.yellow');
 var start = $('.start_btn');
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 

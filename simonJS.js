@@ -1,57 +1,122 @@
 "use strict";
 $('document').ready(function() {
 
+	var green = $('.green');
+	var red = $('.red');
+	var blue = $('.blue');
+	var yellow = $('.yellow');
+	var colors = [goGreen, goRed, goBlue, goYellow];
+	var sequence = [];
+
+	var reset = function(){
+		green.removeClass("glowGreen");
+		red.removeClass("glowRed");
+		blue.removeClass("glowBlue");
+		yellow.removeClass("glowYellow");
+	}
+
+
+
+// light up the colors
 	var goGreen = function(){
-		$(this).toggleClass("glowGreen");
+		reset()
+		green.toggleClass("glowGreen");
 		};
 
-	var goRed =$("div.red").click(function(){
-		$(this).toggleClass("glowRed");
-		});
+	var goRed = function(){
+		reset()
+		red.toggleClass("glowRed");
+		};
 
-	var goBlue = $("div.blue").click(function(){
-		$(this).toggleClass("glowBlue");
-		});
+	var goBlue = function(){
+		reset()
+		blue.toggleClass("glowBlue");
+		};
 
-	var goYellow = $("div.yellow").click(function(){
-			$(this).toggleClass("glowYellow");
-			});
+	var goYellow = function(){
+		reset()
+		yellow.toggleClass("glowYellow");
+		};
 
-var colors = [goGreen, goRed, goBlue, goYellow];
+var time = setTimeout(function(){
+	goGreen();
+	goRed();
+	goBlue();
+	goYellow();
 
-
-var firstChoice = function(){
-	var rand = (Math.floor(Math.random() * colors.length));
-	var choice = colors[rand];
-	switch 
-	if choice = green 
-		goGreen
-	push to array to remember pattern
-	if choice = red
-		goRed
-	push to array to remember pattern 
+}, 2000)
 
 
+// choose a color randomly
+	var rand = function() {
+			var number = (Math.floor(Math.random() * colors.length));
+			sequence.push(number);
+			
+	};
+
+
+// display the color chosen by var rand
+var showSequence = function(){
+ for (var i = 0; i < sequence.length; i++)  {
+ 		var f;
+ 		switch(sequence[i]){
+			case 0: 
+				f=goGreen; 
+				break;
+	
+			case 1:
+				f=goRed;
+				break;
+
+			case 2:
+				f=goBlue;
+				break;
+	
+			case 3:
+				f=goYellow;
+				break;
+		}
+		setTimeout(f, i * 1500)
+	}
 };
 
 
+
+
+// make start button begin the game (i.e. choosing )
 var beginGame = function(){
 		$(".start_btn").click(function(){
-			firstChoice();
+			rand();
+			showSequence();
 		})
 	};
+
 beginGame();
 
-// var sequence = 0;
-
-// if else statement (if user guesses correctly, add onto sequence)
-// else restart game, display on button, you lost, play again? 
-// add click functions to colors? 
-// var sequence = firstChoice += 1? similar to clock homework?
-// create event listeners for click, push them into array (similar to glow function);
-// create event listeners for user click, if that matches random colors, add sequence, if not restart game 
 
 
+// checking to see if user clicks matches color chosen by computer
+// clicksOnTurn increases each time you click, sequence goes through index up to
+// that number
+	var clicksOnTurn = 0;
+	var userClick = $('.box').click(function(e){
+		if (e.target.id == sequence[clicksOnTurn]){
+			clicksOnTurn ++
+			rand();
+			showSequence();
+	} else {
+			// console.log("lose!")
+			$(".button").text("You lost :(! Click to Play Again");
+			var clicksOnTurn = 0;
+			var sequence = [];
+	}
+});
 
 
-}); // End of ready
+
+
+
+
+
+
+}); 
