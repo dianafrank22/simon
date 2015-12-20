@@ -1,65 +1,49 @@
-how to make quarter circle
+var gameBeginSound = $("#begin")[0];
+    $(".start_btn").click(function(){
+        audio.play();
+    });
 
-<p class="quarter-circle"></p>
+var clickCorrectSound = $("#correct")[0];
+    $(".box").click(function(){
+        audio.play();
+    });
 
-.quarter-circle {
-    background-color:#c06;
-    height:150px;
-    width: 150px;
-    border-radius: 150px 0 0 0;
-    border-radius: 150px 0 0 0;
-}
-
-
-
-		setInterval(function(){
-		var degreesPerSecond = 6;
-		secondStart += degreesPerSecond
-		secondHand.css('transform', 'rotate('+secondStart+'deg)');
-		},1000);
-
-notes: 
-
-// each time player gets it right, add to it it 
-
-// toggle choose random to glow 
-
-// $(".green").on("click", function() {
-//     $(this).toggleClass("lightGreen");
-// }) 
-
-// click function on button to start random selection of buttons to light up
-
-// animate to toggle class? 
+var clickWrongSound = $("#wrong")[0];
+$(".box").click(function() {
+    audio.play();
+});
 
 
-// var sequence = "";
-// // empty sequence to start
-// // after every round, if they match the sequence with clicks, then add onto last sequence
-// sequence += color
+
+    <audio id="begin" preload="auto">
+    <source src="https://www.freesound.org/people/Bertrof/sounds/131659/"></source>
+        </audio>
+
+        <audio id="correct" preload="auto">
+    <source src="https://www.freesound.org/people/Bertrof/sounds/131658/"></source>
+        </audio>
+
+        <audio id="wrong" preload="auto">
+    <source src="https://www.freesound.org/people/Bertrof/sounds/131657/"></source>
+        </audio>
 
 
-/*.lightgreen {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-    height:190px;
-    width: 190px;
-    border-top-left-radius: 150px;
-    border-radius: 150px 0 0 0;
-    margin-top:-200px; 
-    margin-left:-190px;
-    text-align: center;
-    border: thick black solid;
-    box-shadow: 0 0 0px 60px rgb(75,219,2);
-}*/
+        var points = [];
+    points.sort(function(a, b){return b-a});
+    $("ol").append
+    ol.append.points
+
+    <div class = "highScores">
+                <ol>
+                    <div class "highScoreTitle">
+                        <h2>High Scores</h2>
+                    </div>
+                    <li> </li>
+                </ol>
+            </div>
 
 
-var green = $('.green');
-var red= $('.red');
-var blue = $('.blue');
-var yellow =$('.yellow');
-var start = $('.start_btn');
 
-
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
+    points.push((sequence.length)-1)
+            if ((sequence.length)-1)) > point[0] && points[1] && points[2] && points[3] && points[5]
+            prompt ("Congrats you have a high score! Please add your name!");

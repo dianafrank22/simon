@@ -9,6 +9,9 @@ $('document').ready(function() {
 	var colors = [goGreen, goRed, goBlue, goYellow];
 	var sequence = [];
 	var sequenceActive = false;
+	
+
+
 
 	var reset = function(){
 		green.removeClass("glowGreen");
@@ -51,11 +54,44 @@ $('document').ready(function() {
 		},1000)
 	};
 
-	$(".green").click(function(){
-		$(this).toggleClass("glowGreen");
-	})
 
-	$(".red")
+// changes color when user clicks
+var clickGreen = function(){
+	setTimeout(function(){
+			$(".green").click(function(){
+			$(this).toggleClass("glowGreen");
+	 })
+	},1000);
+};
+clickGreen();
+
+var clickRed = function(){	
+	setTimeout(function(){
+			$(".red").click(function(){
+			$(this).toggleClass("glowRed");
+	 })
+	},1000);
+};
+clickRed();
+
+var clickBlue = function(){
+	setTimeout(function(){
+			$(".blue").click(function(){
+			$(this).toggleClass("glowBlue");
+		})
+	},1000);
+};
+clickBlue();
+
+var clickYellow = function(){
+	setTimeout(function(){
+	 		$(".yellow").click(function(){
+			$(this).toggleClass("glowYellow");
+ 		})
+	},1000);
+};
+clickYellow();
+
 
 	// choose a color randomly
 	var rand = function() {
@@ -87,12 +123,12 @@ $('document').ready(function() {
 					f=goYellow;
 					break;
 			}
-			setTimeout(f, i * 2000)
+			setTimeout(f, i * 3000)
 		}
 		clickNumber = 0;
 		setTimeout(function(){
 			sequenceActive = false;
-		}, sequence.length * 1000)
+		}, sequence.length * 2000)
 		
 		//listenForClick();
 	};
@@ -104,6 +140,7 @@ $('document').ready(function() {
 		rand();
 		showSequence();
 	})
+
 
 
 
@@ -128,18 +165,19 @@ var verifyClick = function(guess, actual){
 			clickNumber++
 			if (clickNumber < sequence.length){
 			}else{
-				alert("You got it correct! On to the next round!")
+				$('#start').text("Correct! Onto Round " + (parseInt(sequence.length)+1));
 				rand()
 				showSequence()
 			}
 	}else{
-			console.log('wrong')
+			$('#start').text("Wrong! You loose! Click to play again!");	
+			clickNumber=0;
+			  var playerName = prompt("You have a high score! Enter your name!")
+        var highScore = $('.highScores').append('<li>'+playerName+ " "+ ((sequence.length) -1)+ " rounds" +'</li>');
+    		sequence = [];
+
 	}
-}
-
-
-
-
+};
 
 
 
