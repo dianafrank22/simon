@@ -61,7 +61,7 @@ var clickGreen = function(){
 			$(".green").click(function(){
 			$(this).toggleClass("glowGreen");
 	 })
-	},1000);
+	},250);
 };
 clickGreen();
 
@@ -70,7 +70,7 @@ var clickRed = function(){
 			$(".red").click(function(){
 			$(this).toggleClass("glowRed");
 	 })
-	},1000);
+	},250);
 };
 clickRed();
 
@@ -79,7 +79,7 @@ var clickBlue = function(){
 			$(".blue").click(function(){
 			$(this).toggleClass("glowBlue");
 		})
-	},1000);
+	},250);
 };
 clickBlue();
 
@@ -88,7 +88,7 @@ var clickYellow = function(){
 	 		$(".yellow").click(function(){
 			$(this).toggleClass("glowYellow");
  		})
-	},1000);
+	},250);
 };
 clickYellow();
 
@@ -167,13 +167,14 @@ var verifyClick = function(guess, actual){
 			}else{
 				$('#start').text("Correct! Onto Round " + (parseInt(sequence.length)+1));
 				rand()
-				showSequence()
+				setTimeout(showSequence, 1000);
+				// showSequence()
 			}
 	}else{
 			$('#start').text("Wrong! You loose! Click to play again!");	
 			clickNumber=0;
-			  var playerName = prompt("You have a high score! Enter your name!")
-        var highScore = $('.highScores').append('<li>'+playerName+ " "+ ((sequence.length) -1)+ " rounds" +'</li>');
+			var playerName = prompt("You have a high score! Enter your name!")
+        	var highScore = $('.highScores').append('<li>'+playerName+ " "+ ((sequence.length) -1)+ " rounds" +'</li>');
     		sequence = [];
 
 	}
