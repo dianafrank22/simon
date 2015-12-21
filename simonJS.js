@@ -123,7 +123,7 @@ clickYellow();
 					f=goYellow;
 					break;
 			}
-			setTimeout(f, i * 3000)
+			setTimeout(f, i * 2000)
 		}
 		clickNumber = 0;
 		setTimeout(function(){
